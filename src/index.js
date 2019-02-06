@@ -142,7 +142,7 @@ class Game extends React.Component{
 
         for (let i=0;i<this.state.rowCount;i++){
             for (let j=0;j<this.state.columnCount;j++){
-                if (array1[i][j].isAlive != array2[i][j].isAlive){
+                if (array1[i][j].isAlive !== array2[i][j].isAlive){
                     return false;
                 }
             }
