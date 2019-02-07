@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Grid from './grid'
 import './index.css';
 
+import handleViewport from 'react-in-viewport';
+
 class Game extends React.Component{
 
     state = {
@@ -16,6 +18,16 @@ class Game extends React.Component{
     initialiseGame = () =>{
         let height = document.getElementById("height").value;
         let width = document.getElementById("width").value;
+
+        if (width > 20){
+            alert("Maximum width 20");
+            width = 15;
+        }
+
+        if (height > 15){
+            alert("Maximum height 15");
+            height = 15;
+        }
 
         this.setState({
             rowCount: height,
@@ -160,9 +172,9 @@ class Game extends React.Component{
                     <h1>Game Of Life</h1>
                     <p>Please enter the dimensions of the grid and hit Start Game button below. 
                     You can restart any time with new dimensions.</p>
-                    <label name="width" className="gridLabel">Width: </label>
+                    <label name="width" className="gridLabel">Width (max 20): </label>
                     <input id="width" type="text" name="width" className="gridSize" />
-                    <label name="height" className="gridLabel">Height: </label>
+                    <label name="height" className="gridLabel">Height (max 15): </label>
                     <input id="height" type="text" name="height" className="gridSize" />
                     
                     <button id="startButton" onClick={this.initialiseGame}>Start Game</button>

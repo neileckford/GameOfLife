@@ -76,15 +76,14 @@ header{
   color: #fff;
   width: 130px;
   height: 100px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
-  white-space: normal;
   margin: 25px;
 }
 
 .gridLabel{
   display: block;
-  width: 100px;
+  width: 150px;
   float: left;
   margin-bottom: 10px;
 }
